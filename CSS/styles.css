@@ -1,0 +1,385 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --background           : rgb(52, 58, 64);
+    --white_color          : #fff;
+    --black_color          : #000;
+    --border_form          : gainsboro;
+    --back_input           : #f7f7f9;
+    --border_table         : #ccc;
+    --green_color          : green;
+    --red_color            : red;
+    --hover_btn_change     : rgb(133, 209, 133);
+    --hover_btn_delete     : rgb(238, 115, 115);
+    --tooltip_back_change  : rgb(80, 141, 80);
+    --tooltip_delete_change: rgb(199, 94, 94);
+    --shadow_item_options  : gainsboro;
+    --label_hover          : goldenrod;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: var(--background);
+    padding: 0 20px;
+}
+
+.title{
+    color: var(--white_color);
+    margin: 0;
+}
+
+.search-box{
+    position: absolute;
+    width: 60px;
+    display: flex;
+    align-items: center;
+	background: var(--white_color);
+	height: 60px;
+	border-radius: 50px;
+	padding: 10px;
+    left: 250px;
+    transition: 0.4s ease all;
+}
+
+.search-box:hover{
+    width: 290px;
+}
+
+.search-box:hover > .search-text{
+	width: 240px;
+	padding: 0 6px;
+}
+
+.search-box:hover > .search-btn{
+	background: var(--background);
+    color: var(--white_color);
+}
+
+.search-box_full {
+    width: 290px;
+}
+
+.search-btn{
+	color: var(--background);
+	float: right;
+	width: 40px;
+	height: 40px;
+    border: none;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.4s ease all;
+    cursor: pointer;
+}
+
+.search-text{
+	border:none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: var(--black_color);
+	font-size: 16px;
+	transition: 0.4s ease all;
+	line-height: 40px;
+	width: 0;
+}
+
+.search-text_focus{
+	width: 240px;
+	padding: 0 6px;
+}
+
+.section{
+    width: 90%;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    border: solid 1px var(--border_form);
+    width: 500px;
+    padding: 15px;
+}
+
+.input_task, 
+.textarea{
+    border: none;
+    background-color: var(--back_input);
+    padding: 12px 24px;
+    outline-color: var(--white_color);
+    transition: 0.3s ease all;
+}
+
+.input_task:focus,
+.textarea:focus{
+    outline-color: var(--border_form);
+}
+
+.textarea{
+    height: 250px;
+    resize: none;
+}
+
+.error_input{
+    box-shadow: 1px 1px 2px var(--red_color), -1px -1px 2px var(--red_color);
+}
+
+.submit{
+    height: 50px;
+    border: none;
+    background-color: var(--background);
+    color: var(--white_color);
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.submit:hover{
+    background-color: rgb(39, 43, 48);
+}
+
+.information{
+    width: 100%;
+}
+
+.cntd_options{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    column-gap: 40px;
+    border-top: solid 1px var(--border_form);
+    border-left: solid 1px var(--border_form);
+    border-right: solid 1px var(--border_form);
+    position: relative;
+}
+
+.item_option{
+    border-radius: 12px;
+    padding: 3px;
+}
+
+.item_option:hover{
+    background-color: var(--back_input);
+    box-shadow: 1px 1px 8px var(--shadow_item_options), 
+                -1px -1px 8px var(--shadow_item_options);
+}
+
+.item_option:hover label{
+    color: var(--label_hover);
+}
+
+.item_option input,
+.item_option label{
+    cursor: pointer;
+}
+
+input[type="radio"]:checked{
+    transform: scale(1.5);
+}
+
+input[type="radio"]:checked + label{
+    font-weight: bold;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--white_color);
+}
+
+.table thead {
+    background-color: var(--background);
+}
+
+.table thead tr td {
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid var(--border_table);
+    text-transform: capitalize;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid var(--border_table);
+    color: var(--black_color);
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.descTask{
+    width: 500px;
+}
+
+.desc{
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.cntd_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    background-color: var(--white_color);
+    border-radius: 50%;
+    position: relative;
+    transition: 0.5s ease all;
+}
+
+.btn:hover{
+    transform: rotate(360deg);
+}
+
+.change_state{
+    border: solid 1px var(--green_color);
+}
+
+.change_state:hover{
+    background-color: var(--hover_btn_change);
+    border-color: var(--hover_btn_change);
+}
+
+.change_state:hover::after{
+    content: "Cambiar estado";
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    left: -10px;
+    top: 42px;
+    background-color: var(--tooltip_back_change);
+    color: var(--white_color);
+    border-radius: 20px;
+}
+
+.delete{
+    border: solid 1px var(--red_color);
+}
+
+.delete:hover{
+    background-color: var(--hover_btn_delete);
+    border-color: var(--hover_btn_delete);
+}
+
+.delete:hover::after{
+    content: "Eliminar tarea";
+    position: absolute;
+    text-align: center;
+    width: 91px;
+    left: -10px;
+    top: 42px;
+    background-color: var(--tooltip_delete_change);
+    color: var(--white_color);
+    border-radius: 20px;
+}
+
+.btn_back{
+    position: absolute;
+    left: 0;
+    top: 10px;
+    border: none;
+    background-color: var(--background);
+    color: var(--white_color);
+    font-size: 30px;
+}
+
+.btn_back:hover{
+    transform: rotate(180deg);
+}
+
+.cntdEmptyRow{
+    text-align: center;
+    padding: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+    .section{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .form,
+    .cntd_options{
+        box-shadow: 1px 1px 3px var(--background), -1px -1px 3px var(--background);
+    }
+    .form{
+        width: 100%;
+    }
+    .textarea{
+        height: 100px;
+    }
+    .cntd_options{
+        border-bottom: solid 1px var(--border_form);
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .cntd_table{
+        overflow-x: scroll;
+    }
+    .table{
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .header{
+        justify-content: center;
+        align-items: start;
+        height: 150px;
+        padding: 20px;
+    }
+    .search-box{
+        left: 20px;
+        top:75px
+    }
+    .cntd_options{
+        padding: 20px 10px;
+        column-gap: 10px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .cntd_options{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .btn_back{
+        left: calc(100% - 60px);
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP-TASK</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    
+    <header class="header">
+        <h1 class="title">Lista de tareas</h1>
+        <div class="search-box">
+            <input class="search-text" id="searchText" type="text" placeholder="Buscar tarea por nombre">
+            <button class="search-btn" id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="section">
+
+        <div class="form">
+            <input type="text" class="input_task" id="input_task" placeholder="Nombre">
+            <textarea class="textarea" id="text_task" placeholder="Descripción"></textarea>
+            <input type="submit" value="Agregar tarea" id="submit" class="submit">
+        </div>
+
+        <div class="information">
+            <div class="cntd_options" id="cntd_options">
+                <div class="item_option">
+                    <input type="radio" name="state" value="Todas" id="radio_todas" checked>
+                    <label for="radio_todas">Todas</label>
+                </div>
+                <div class="item_option">
+                    <input type="radio" name="state" value="Completadas" id="radio_comple">
+                    <label for="radio_comple">Completadas</label>
+                </div>
+                <div class="item_option">
+                    <input type="radio" name="state" value="Pendientes" id="radio_pendi">
+                    <label for="radio_pendi">Pendientes</label>
+                </div>
+            </div>
+
+            <div class="cntd_table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>Nombre</td>
+                            <td>Descripción</td>
+                            <td>Estado</td>
+                            <td>Acción</td>
+                        </tr>
+                    </thead>
+                    <tbody id="taskTableBody">
+                    </tbody>
+                </table>
+                <div class="cntdEmptyRow" id="cntdEmptyRow"></div>
+            </div>
+        </div>
+    
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+    <script type="module" src="./JS/script.js"></script>
+</body>
+</html>
