@@ -18,49 +18,54 @@
         </div>
     </header>
 
-    <section class="section">
+    <div class="container">
 
-        <div class="form">
-            <input type="text" class="input_task" id="input_task" placeholder="Nombre">
-            <textarea class="textarea" id="text_task" placeholder="Descripción"></textarea>
-            <input type="submit" value="Agregar tarea" id="submit" class="submit">
-        </div>
-
-        <div class="information">
-            <div class="cntd_options" id="cntd_options">
-                <div class="item_option">
-                    <input type="radio" name="state" value="Todas" id="radio_todas" checked>
-                    <label for="radio_todas">Todas</label>
-                </div>
-                <div class="item_option">
-                    <input type="radio" name="state" value="Completadas" id="radio_comple">
-                    <label for="radio_comple">Completadas</label>
-                </div>
-                <div class="item_option">
-                    <input type="radio" name="state" value="Pendientes" id="radio_pendi">
-                    <label for="radio_pendi">Pendientes</label>
-                </div>
+        <section class="section">
+            <div class="form">
+                <input type="text" class="input_task" id="input_task" placeholder="Nombre">
+                <textarea class="textarea" id="text_task" placeholder="Descripción"></textarea>
+                <input type="submit" value="Agregar tarea" id="submit" class="submit">
             </div>
-
-            <div class="cntd_table">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <td>Id</td>
-                            <td>Nombre</td>
-                            <td>Descripción</td>
-                            <td>Estado</td>
-                            <td>Acción</td>
-                        </tr>
-                    </thead>
-                    <tbody id="taskTableBody">
-                    </tbody>
-                </table>
-                <div class="cntdEmptyRow" id="cntdEmptyRow"></div>
-            </div>
-        </div>
+            <div class="information">
+                <div class="cntd_options" id="cntd_options">
+                    <div class="item_option">
+                        <input type="radio" name="state" value="Todas" id="radio_todas" checked>
+                        <label for="radio_todas">Todas</label>
+                    </div>
+                    <div class="item_option">
+                        <input type="radio" name="state" value="Completadas" id="radio_comple">
+                        <label for="radio_comple">Completadas</label>
+                    </div>
+                    <div class="item_option">
+                        <input type="radio" name="state" value="Pendientes" id="radio_pendi">
+                        <label for="radio_pendi">Pendientes</label>
+                    </div>
+                </div>
     
-    </section>
+                <div class="cntd_table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>Nombre</td>
+                                <td>Descripción</td>
+                                <td>Estado</td>
+                                <td>Acción</td>
+                            </tr>
+                        </thead>
+                        <tbody id="taskTableBody">
+                        </tbody>
+                    </table>
+                    <div class="cntdEmptyRow" id="cntdEmptyRow"></div>
+                </div>
+            </div>
+        </section>
+    
+        <footer class="footer">
+            <p>2025 | Diseño y edicion: Oscar David Caballero Moreno</p>
+        </footer>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>

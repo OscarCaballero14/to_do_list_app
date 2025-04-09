@@ -102,6 +102,11 @@ body{
 	padding: 0 6px;
 }
 
+.container{
+    position: relative; 
+    height: calc(100vh - 120px);
+}
+
 .section{
     width: 90%;
     max-width: 1300px;
@@ -325,6 +330,15 @@ input[type="radio"]:checked + label{
 .cntdEmptyRow{
     text-align: center;
     padding: 15px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--background);
+    color: #fff;
 }
 
 @media screen and (max-width: 1000px) {
