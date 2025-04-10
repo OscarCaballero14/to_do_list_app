@@ -219,7 +219,7 @@ input[type="radio"]:checked + label{
     background-color: var(--background);
 }
 
-.table thead tr td {
+.table thead tr th {
     font-weight: bold;
     padding: 10px;
     border-bottom: 2px solid var(--border_table);

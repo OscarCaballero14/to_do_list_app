@@ -7,6 +7,7 @@ import {
 } from "./Dom/form.js";
 import { search } from "./Dom/search.js";
 import { loadTypeList } from "./Dom/filter.js";
+import { removeDataTable, emptyTaksList } from "./Dom/table.js";
 
 const searchText = document.getElementById("searchText");
 const searchBtn = document.getElementById("searchBtn");
@@ -32,6 +33,7 @@ function addNewTask() {
 
   clearFields();
   removeClassError();
+  removeDataTable(cntdEmptyRow);
   loadTypeList("radio_pendi");
   radio_pendi.checked = true;
 }
@@ -63,7 +65,12 @@ function validationForm(name, desc) {
   return true;
 }
 
-loadTypeList("radio_todas");
+if (getSavedTasks().length === 0) {
+    emptyTaksList();
+}else{
+  loadTypeList("radio_todas");    
+}
+
 
 document.addEventListener("click", (event) => {
   clickOutsideSearch(event);

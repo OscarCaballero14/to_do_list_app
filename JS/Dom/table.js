@@ -54,6 +54,9 @@ export function deleteTask(id) {
     const resultado = savedTasks.filter((item) => item.id !== id);
     localStorage.removeItem("savedTasks");
     setSavedTasks(resultado);
+    if (resultado.length === 0) {
+        emptyTaksList();
+    }
     loadTypeList(typeList);
 }
 
@@ -69,6 +72,17 @@ export const renderEmptyRow = () => {
     div.innerHTML = `
         <span>
             No se encontraron tareas que coincidan con tu búsqueda
+        </span>
+    `;
+    cntdEmptyRow.appendChild(div);
+}
+
+export const emptyTaksList = () => {
+    removeDataTable(cntdEmptyRow);
+    const div = document.createElement("div");
+    div.innerHTML = `
+        <span>
+            No hay tareas registradas
         </span>
     `;
     cntdEmptyRow.appendChild(div);
