@@ -1,4 +1,7 @@
+const input_task = document.getElementById("input_task");
+const text_task = document.getElementById("text_task");
 const searchBox = document.querySelector(".search-box");
+const searchText = document.getElementById("searchText");
 
 export const clearFields = () => {
     input_task.value = "";

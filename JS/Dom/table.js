@@ -1,6 +1,8 @@
 import { getSavedTasks, setSavedTasks } from "../storage.js";
 import { loadTypeList, typeList } from "./filter.js";
 
+const cntdEmptyRow = document.getElementById("cntdEmptyRow");
+
 export function renderTaskBodyTable(taskList, taskTableBody) {
     taskList.forEach((task) => {
       const row = document.createElement("tr");

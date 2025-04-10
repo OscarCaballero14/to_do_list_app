@@ -1,6 +1,9 @@
 import { getSavedTasks } from "../storage.js";
 import { renderTaskBodyTable, removeDataTable } from "./table.js";
 
+const cntd_options = document.getElementById("cntd_options");
+const taskTableBody = document.getElementById("taskTableBody");
+
 export let typeList;
 
 export function renderRadioFiltro() {

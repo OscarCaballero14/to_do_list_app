@@ -15,6 +15,7 @@ const input_task = document.getElementById("input_task");
 const text_task = document.getElementById("text_task");
 const submit = document.getElementById("submit");
 const radio_pendi = document.getElementById("radio_pendi");
+const cntdEmptyRow = document.getElementById("cntdEmptyRow");
 
 function addNewTask() {
   const name = input_task.value.trim();

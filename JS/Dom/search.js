@@ -3,6 +3,8 @@ import { normalizeText, modalError, expressions } from "../utils.js";
 import { renderTaskBodyTable, removeDataTable, renderEmptyRow } from "./table.js";
 import { renderRadioFiltro } from "./filter.js";
 
+const searchText = document.getElementById("searchText");
+
 export function search() {
   const result = validationSearch();
   if (!result) { return; }
