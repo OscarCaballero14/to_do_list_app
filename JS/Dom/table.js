@@ -1,5 +1,6 @@
 import { getSavedTasks, setSavedTasks } from "../storage.js";
 import { loadTypeList, typeList } from "./filter.js";
+import { modalInfo } from "./../utils.js"
 
 const cntdEmptyRow = document.getElementById("cntdEmptyRow");
 
@@ -38,28 +39,52 @@ export function renderTaskBodyTable(taskList, taskTableBody) {
 }
 
 export function changeState(id) {
-    const savedTasks = getSavedTasks();
-    savedTasks.forEach((task) => {
-      if (task.id === id) {
-        task.estado = !task.estado;
-      }
+    Swal.fire({
+        icon: "question",
+        text: '¿Desea cambiar el estado de la tarea?',
+        showCancelButton: false,
+        showDenyButton: true,
+        confirmButtonText: "Aceptar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const savedTasks = getSavedTasks();
+            savedTasks.forEach((task) => {
+                if (task.id === id) {
+                    task.estado = !task.estado;
+                }
+            });
+            localStorage.removeItem("savedTasks");
+            setSavedTasks(savedTasks);
+            loadTypeList(typeList);
+            modalInfo("success", "Cambio realizado");
+        } else if (result.isDenied) {
+            modalInfo("info", "No hizo cambios");
+        }
     });
-  
-    localStorage.removeItem("savedTasks");
-    setSavedTasks(savedTasks);
-    loadTypeList(typeList);
 }
   
 export function deleteTask(id) {
-    const savedTasks = getSavedTasks();
-  
-    const resultado = savedTasks.filter((item) => item.id !== id);
-    localStorage.removeItem("savedTasks");
-    setSavedTasks(resultado);
-    if (resultado.length === 0) {
-        emptyTaksList();
-    }
-    loadTypeList(typeList);
+     Swal.fire({
+        icon: "question",
+        text: '¿Desea eliminar la tarea?',
+        showCancelButton: false,
+        showDenyButton: true,
+        confirmButtonText: "Aceptar",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const savedTasks = getSavedTasks();
+            const resultado = savedTasks.filter((item) => item.id !== id);
+            localStorage.removeItem("savedTasks");
+            setSavedTasks(resultado);
+            if (resultado.length === 0) {
+                emptyTaksList();
+            }
+            loadTypeList(typeList);
+            modalInfo("success", "Tarea eliminada");
+        } else if (result.isDenied) {
+            modalInfo("info", "No hizo cambios");
+        }
+    });
 }
 
 export const removeDataTable = (element) => {

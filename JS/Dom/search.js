@@ -31,7 +31,7 @@ export function search() {
 
 export function validationSearch(){
     if (searchText.value === "") {
-        modalError("Campo vacio");
+        modalError("Debe escribir algo para buscar");
         return false;
     }
     
