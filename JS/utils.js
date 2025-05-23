@@ -10,7 +10,14 @@ export const expressions = {
 export const modalError = (text) =>{
     Swal.fire({
         icon: "error",
-        title: "Error",
+        text: text,
+        showConfirmButton: true,
+    });
+}
+
+export const modalInfo = (icon,text) =>{
+    Swal.fire({
+        icon: icon,
         text: text,
         showConfirmButton: true,
     });
